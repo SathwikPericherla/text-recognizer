@@ -2,6 +2,7 @@ import React from "react";
 import  logo  from "../src/assets/logo.png";
 
 export const Hero = () => {
+  
   return (
     <header className='my-5 w-full flex justify-center items-center flex-col'>
       <nav className='flex justify-between items-center w-full mb-10 pt-3'>
@@ -19,7 +20,7 @@ export const Hero = () => {
       </nav>
 
       <h1 className='head_text'>
-        Recognize TEXT with
+        Recognize Text with
         <span className='blue_gradient ml-5'>AI</span>
       </h1>
       <h2 className='desc'>

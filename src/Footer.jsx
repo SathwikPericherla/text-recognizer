@@ -7,7 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 export const Footer = () => {
     const socialIcons = [InstagramIcon, XIcon, GitHubIcon, LinkedInIcon]; // Assuming all icons are imported
     return (
-        <div className="relative h-52 ">
+        <div className="relative h-[360px] ">
      
       <div className="absolute bottom-0 flex justify-between w-full bg-slate-100 text-black py-4 px-6">
         <p className="text-sm ml-10">&copy; 2024 Your Company. All rights reserved.</p>

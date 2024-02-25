@@ -31,7 +31,7 @@ export const Card = () => {
     try{
       const formData = new FormData();
     formData.append('image', selectedFile);
-
+    formData.append('imageText', "what is the image is about expain in 2 lines?");
     const response = await fetch('http://192.168.29.249:5001/process-image', { // Replace with your backend URL http://192.168.29.249:5001
       method: 'POST',
       body: formData,
@@ -74,7 +74,7 @@ export const Card = () => {
 
   return (
     <div>
-    {!imagePreview &&(<div className= "bg-white shadow-2xl flex justify-center py-[80px] w-[300px] rounded-xl my-3">
+    {!imagePreview &&(<div className= "bg-white shadow-2xl flex justify-center py-[150px] w-[500px] rounded-xl my-3">
        <div>
        
   
