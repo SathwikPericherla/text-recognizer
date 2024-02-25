@@ -24,17 +24,35 @@ export const Card = () => {
   const [imagePreview, setImagePreview] = useState(null); 
   const [data, setData] = useState(''); 
   const [btn, setBtn] = useState(false); 
+
+
+
   const getData =async () => {
-      const response = await fetch("https://fakestoreapi.com/products/1");
-      const res =await response.json()
-      setData(res.title)
-      console.log(res)
+    const formData = new FormData();
+    formData.append('image', selectedFile);
+
+    const response = await fetch('http://127.0.0.1:5000/process-image', { // Replace with your backend URL http://192.168.29.249:5001
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await response.json();
+    setData(data.message);
+    console.log(data);
   }
+
+
+
   const handleBtnClick = ()=>{
     setBtn(true)
     getData()
    
   }
+
+
+
+
+
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
