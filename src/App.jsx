@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Card } from "./Card"
 import './index.css'
 import { Hero } from './Hero'
 import { Footer } from './Footer'
+import { Output } from './Output'
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
     <div className=' flex justify-center my-7'>
       <Card />
     </div>
+    {/* <Output response={""} /> */}
     <Footer />
     </>  
   )

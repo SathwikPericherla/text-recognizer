@@ -28,10 +28,11 @@ export const Card = () => {
 
 
   const getData =async () => {
-    const formData = new FormData();
+    try{
+      const formData = new FormData();
     formData.append('image', selectedFile);
 
-    const response = await fetch('http://127.0.0.1:5000/process-image', { // Replace with your backend URL http://192.168.29.249:5001
+    const response = await fetch('http://192.168.29.249:5001/process-image', { // Replace with your backend URL http://192.168.29.249:5001
       method: 'POST',
       body: formData,
     });
@@ -39,6 +40,10 @@ export const Card = () => {
     const data = await response.json();
     setData(data.message);
     console.log(data);
+    }
+    catch(err){
+      setData("err")
+    }
   }
 
 
@@ -92,7 +97,7 @@ export const Card = () => {
 
     <div>
                 {imagePreview && ( <div>
-                    <div className=' h-[400px] p-1 flex flex-col justify-center relative mb-5'>
+                    <div className='h-[400px] p-1 flex flex-col justify-center relative mb-5'>
                     <img src={imagePreview} alt="Selected File Preview" className='object-contain shadow-lg max-w-full rounded-lg max-h-full '  /> {/* Adjust max-width as needed */} 
           
                     </div>
