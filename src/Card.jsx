@@ -1,7 +1,7 @@
 import { useState } from 'react'; // Import useState
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import { Output } from './Output';
 
@@ -51,7 +51,7 @@ export const Card = () => {
 
   return (
     <div>
-    {!imagePreview &&(<div className= "bg-white shadow-xl flex justify-center py-[80px] w-[300px]  ">
+    {!imagePreview &&(<div className= "bg-white shadow-2xl flex justify-center py-[80px] w-[300px] rounded-xl my-3">
        <div>
        
   
@@ -61,10 +61,10 @@ export const Card = () => {
     role={undefined}
     variant="contained"
     tabIndex={-1}
-    startIcon={<CloudUploadIcon />}
+    startIcon={<AddPhotoAlternateIcon />}
 
   >
-    Upload file
+    Upload Image
     <VisuallyHiddenInput type="file" accept='image/*' onChange={handleFileChange} />
   </Button>)
 }
@@ -74,14 +74,16 @@ export const Card = () => {
 
     <div>
                 {imagePreview && ( <div>
-                    <div className='w-[500px] h-[500px] flex flex-col justify-center relative '>
-                    <img src={imagePreview} alt="Selected File Preview" className='object-fit-contain max-w-full rounded-lg max-h-full '  /> {/* Adjust max-width as needed */} 
-                    <div className='absolute bottom-0 left-48'>
+                    <div className=' h-[400px] p-1 flex flex-col justify-center relative mb-5'>
+                    <img src={imagePreview} alt="Selected File Preview" className='object-contain shadow-lg max-w-full rounded-lg max-h-full '  /> {/* Adjust max-width as needed */} 
+          
+                    </div>
+                    <div className='flex justify-center'>
                     <Button
                      variant="contained"
                      onClick={handleBtnClick}
+                  
                     >< AutoAwesomeIcon/> <span className='ml-2'> Recognize</span></Button>
-                    </div>
                     </div>
                     {btn &&(<Output response= {data}/>)}
                     </div>
